@@ -146,18 +146,26 @@ def transaction_rows(run_dir: Path) -> int | None:
     return int(load_json(profile_path).get("row_count") or 0)
 
 
-def reviewed_workbook_path(manifest: dict[str, object]) -> Path | None:
+def reviewed_workbook_path(manifest: dict[str, object], run_dir: Path | None = None) -> Path | None:
     path_value = manifest.get("reviewed_workbook") or manifest.get("default_reviewed_workbook")
     if not path_value:
         return None
     path = Path(str(path_value))
-    return path if path.exists() else None
+    if path.exists():
+        return path
+    # If the absolute path doesn't exist (e.g. moved to a different machine),
+    # try resolving the filename relative to the run directory.
+    if run_dir and not path.exists():
+        local_path = run_dir / path.name
+        if local_path.exists():
+            return local_path
+    return None
 
 
 def summarize_run(run_dir: Path) -> dict[str, object]:
     manifest = load_run_manifest(run_dir)
     row_annotations, pattern_flags = count_annotations(run_dir)
-    reviewed_path = reviewed_workbook_path(manifest)
+    reviewed_path = reviewed_workbook_path(manifest, run_dir)
     has_annotations = (run_dir / "annotations.json").exists()
     support_files = list(manifest.get("support_files") or [])
     row_count = transaction_rows(run_dir)
@@ -941,7 +949,7 @@ class ReviewUIHandler(BaseHTTPRequestHandler):
             self._send_json(HTTPStatus.NOT_FOUND, {"error": "Review run not found."})
             return
 
-        reviewed_path = reviewed_workbook_path(load_run_manifest(run_dir))
+        reviewed_path = reviewed_workbook_path(load_run_manifest(run_dir), run_dir)
         if reviewed_path is None:
             self._send_json(HTTPStatus.NOT_FOUND, {"error": "Reviewed workbook is not available for this run."})
             return
