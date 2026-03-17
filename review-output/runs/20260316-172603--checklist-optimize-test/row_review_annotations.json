@@ -1,0 +1,134 @@
+{
+  "source_sheet": "Transaction Detail by Tax Code",
+  "output_sheet": "Transaction Detail by Tax Code",
+  "annotation_mode": "inline_columns",
+  "row_annotations": [
+    {
+      "source_row": 8,
+      "status": "Needs More Context",
+      "issue_summary": "Exempt bill from New Wave for TikTok Shop & Ads Services ($3,451.73). Marketing/advertising services are generally taxable in Canada. No visible support for exempt treatment on this significant purchase.",
+      "checklist_refs": ["CHK-015"],
+      "highlight_columns": ["Tax Code", "Name"],
+      "missing_context": ["Vendor GST/HST registration status", "Whether New Wave is a non-resident non-registrant"],
+      "suggested_next_step": "Confirm whether New Wave is GST/HST-registered. If registered, the exempt coding may be incorrect."
+    },
+    {
+      "source_row": 9,
+      "status": "Needs More Context",
+      "issue_summary": "Exempt COGS bill from EpikFliks ($1,500). Memo references NFX202501 (Netflix project), suggesting subcontractor work. Exempt treatment needs verification of vendor registration status.",
+      "checklist_refs": ["CHK-015", "CHK-016"],
+      "highlight_columns": ["Tax Code", "Name"],
+      "missing_context": ["Vendor GST/HST registration status", "Nature of services provided by EpikFliks"],
+      "suggested_next_step": "Verify whether EpikFliks is GST/HST-registered. If registered, exempt coding on a COGS subcontractor bill needs support."
+    },
+    {
+      "source_row": 11,
+      "status": "Needs More Context",
+      "issue_summary": "Exempt bill from Emily G ($6,351.18), a person-name vendor suggesting freelancer. Billed to Billable Expense for Alphabet project (ALP202504) with invoice number, consistent with contractor billing. Exempt treatment requires confirmation that vendor is not GST/HST-registered.",
+      "checklist_refs": ["CHK-015", "CHK-016"],
+      "highlight_columns": ["Tax Code", "Name"],
+      "missing_context": ["Vendor GST/HST registration status", "Whether Emily G exceeds the $30,000 small-supplier threshold"],
+      "suggested_next_step": "Confirm Emily G's GST/HST registration status. At $6,351 this is a significant exempt freelancer bill."
+    },
+    {
+      "source_row": 12,
+      "status": "Needs More Context",
+      "issue_summary": "Exempt bill from Justine A ($1,500), a person-name vendor suggesting freelancer. Billed to Billable Expense for Amazon project (AMZ202504) with invoice number. Same pattern as Emily G (row 11).",
+      "checklist_refs": ["CHK-015", "CHK-016"],
+      "highlight_columns": ["Tax Code", "Name"],
+      "missing_context": ["Vendor GST/HST registration status"],
+      "suggested_next_step": "Confirm Justine A's GST/HST registration status."
+    },
+    {
+      "source_row": 13,
+      "status": "Review Needed",
+      "issue_summary": "Exempt credit memo on Agency Fees (revenue) for Alphabet, reversing Invoice 1027. All other Alphabet revenue invoices use HST ON or GST. The credit memo preserves the Exempt coding of the original invoice, but the Exempt treatment on revenue for this customer is inconsistent with the rest of the workbook.",
+      "checklist_refs": ["CHK-005"],
+      "highlight_columns": ["Tax Code"],
+      "suggested_next_step": "Review whether the original Invoice 1027 should have carried HST or GST. The credit memo correctly mirrors the invoice, but the underlying Exempt treatment on Alphabet revenue is the concern."
+    },
+    {
+      "source_row": 14,
+      "status": "Review Needed",
+      "issue_summary": "Exempt invoice on Agency Fees (revenue) for Alphabet ($5,000). Memo says 'Prebill project'. Alphabet's other Agency Fees invoices use HST ON (rows 26, 43-48) or GST (rows 19-21). Exempt treatment on revenue for a customer that normally has tax applied is unexpected.",
+      "checklist_refs": ["CHK-005"],
+      "highlight_columns": ["Tax Code"],
+      "suggested_next_step": "Confirm whether this prebill invoice should carry HST ON or GST consistent with other Alphabet invoices."
+    },
+    {
+      "source_row": 17,
+      "status": "Review Needed",
+      "issue_summary": "Amazon billed GST (5%) on Agency Fees ($200,000) in December 2025. The same customer was billed HST ON (13%) on Agency Fees in April-May 2025 (rows 27, 31). The switch from HST ON to GST on the same account suggests a possible change in place of supply, but the inconsistency is significant given the large dollar amount.",
+      "checklist_refs": ["CHK-007", "CHK-005"],
+      "highlight_columns": ["Tax Code", "Name"],
+      "suggested_next_step": "Confirm whether the place of supply changed for Amazon between the HST ON and GST billing periods. Note that the customer name format also differs ('Amazon Company' vs 'Amazon [AMZ]')."
+    },
+    {
+      "source_row": 18,
+      "status": "Review Needed",
+      "issue_summary": "Second line of Invoice 1003 for Amazon Company, also coded GST ($200). Same inconsistency as the main line (row 17).",
+      "checklist_refs": ["CHK-007", "CHK-005"],
+      "highlight_columns": ["Tax Code"]
+    },
+    {
+      "source_row": 19,
+      "status": "Review Needed",
+      "issue_summary": "Alphabet project ALP202307 (Google Pixel Launch) billed GST (5%) on Agency Fees ($80,000) in December 2025. The same project was billed HST ON (13%) in October 2025 (rows 43-48). Same customer, same project code, same account, different tax code across a two-month span.",
+      "checklist_refs": ["CHK-007", "CHK-005"],
+      "highlight_columns": ["Tax Code", "Name"],
+      "suggested_next_step": "Confirm whether the place of supply for this project changed between October and December 2025. The same project shifting from HST ON to GST is a strong inconsistency."
+    },
+    {
+      "source_row": 20,
+      "status": "Review Needed",
+      "issue_summary": "Second line of Invoice 1004 for Alphabet ALP202307, also coded GST ($20,000). Same project inconsistency as row 19.",
+      "checklist_refs": ["CHK-007", "CHK-005"],
+      "highlight_columns": ["Tax Code"]
+    },
+    {
+      "source_row": 21,
+      "status": "Review Needed",
+      "issue_summary": "Third line of Invoice 1004 for Alphabet ALP202307, also coded GST ($50,000). Same project inconsistency as row 19.",
+      "checklist_refs": ["CHK-007", "CHK-005"],
+      "highlight_columns": ["Tax Code"]
+    },
+    {
+      "source_row": 36,
+      "status": "Review Needed",
+      "issue_summary": "Bill from Virtual Assistants for 'Virtual Admin Service' ($5,658.80) coded to Staff Costs:Salaries account with HST ON. This is a vendor bill (not payroll), so the ITC claim is likely valid, but the Salaries account classification is unusual for a purchased service. The account label may cause confusion in ITC eligibility reviews.",
+      "checklist_refs": ["CHK-013"],
+      "highlight_columns": ["Account"],
+      "suggested_next_step": "Confirm whether the Salaries account is the intended classification for this vendor service. Consider whether it should be reclassified to a contractor or professional services account."
+    },
+    {
+      "source_row": 38,
+      "status": "Review Needed",
+      "issue_summary": "Bill from That Planted Fork ($1,250) coded to Marketing Expenses with full HST ON. The vendor name strongly suggests a restaurant or food service. Memo says 'Travel Stipend'. If this is a meals purchase, it should use the Meals and Entertainment tax code for the 50% ITC restriction rather than claiming full ITC under HST ON.",
+      "checklist_refs": ["CHK-018"],
+      "highlight_columns": ["Tax Code", "Name", "Account"],
+      "suggested_next_step": "Confirm whether That Planted Fork is a restaurant/food vendor. If so, this should be reviewed for M&E tax code treatment and potential ITC restriction."
+    }
+  ],
+  "pattern_annotations": [
+    {
+      "pattern_id": "PAT-001",
+      "issue_summary": "Alphabet has three different tax treatments on Agency Fees: Exempt (rows 13-14, May 2025), GST (rows 19-21, December 2025), and HST ON (rows 26 and 43-48, April and October 2025). The ALP202307 project (Google Pixel Launch) specifically switches from HST ON in October to GST in December. The Exempt invoices (rows 13-14) are a reversed prebill pair. This mixed treatment across the same customer and project warrants review to confirm the correct place-of-supply determination for each billing period.",
+      "checklist_refs": ["CHK-007"],
+      "row_refs": [13, 14, 19, 20, 21, 26, 43, 44, 45, 46, 47, 48]
+    },
+    {
+      "pattern_id": "PAT-002",
+      "issue_summary": "Amazon has mixed tax treatment on Agency Fees: HST ON in April-May 2025 (rows 27, 31 as 'Amazon [AMZ]:AMZ202504') and GST in December 2025 (rows 17-18 as 'Amazon Company'). The customer name format differs between the two groups, which could indicate different entities or engagements, but both are grouped under Amazon and bill to the same revenue account.",
+      "checklist_refs": ["CHK-007"],
+      "row_refs": [17, 18, 27, 31]
+    }
+  ],
+  "unmapped_observations": [
+    {
+      "observation_id": "OBS-001",
+      "issue_summary": "The Meals and Entertainment tax code reports tax amounts at approximately 6.5% of net (half of the 13% HST rate), indicating the M&E code in QuickBooks is configured to reflect the 50% ITC restriction directly in the tax amount. This is a workbook configuration note, not an error.",
+      "row_refs": [51, 52, 53],
+      "reason_not_checklist_flag": "This is a system configuration observation, not a tax treatment concern. The M&E code is working as intended."
+    }
+  ]
+}

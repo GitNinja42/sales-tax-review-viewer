@@ -1,0 +1,60 @@
+{
+  "run_id": "20260316-172603--checklist-optimize-test",
+  "run_label": "checklist-optimize-test",
+  "created_at": "2026-03-16T17:26:03-04:00",
+  "source_workbook": "/Users/chris/Documents/review-pack-template - claude version/review-output/runs/20260316-154934--best-agency-transaction-details-by-tax-code-2/inputs/Best-Agency---Transaction-Details-by-Tax-Code-2.xlsx",
+  "source_workbook_name": "Best-Agency---Transaction-Details-by-Tax-Code-2.xlsx",
+  "selected_sheet": "Transaction Detail by Tax Code",
+  "context_dir": "/Users/chris/Documents/review-pack-template - claude version/review-output/runs/20260316-172603--checklist-optimize-test/context",
+  "annotations_path": "/Users/chris/Documents/review-pack-template - claude version/review-output/runs/20260316-172603--checklist-optimize-test/annotations.json",
+  "default_reviewed_workbook": "/Users/chris/Documents/review-pack-template - claude version/review-output/runs/20260316-172603--checklist-optimize-test/Best-Agency---Transaction-Details-by-Tax-Code-2 - Reviewed.xlsx",
+  "row_dump_generated": false,
+  "review_status": "reviewed",
+  "review_error": null,
+  "review_started_at": "2026-03-16T17:26:03-04:00",
+  "review_finished_at": "2026-03-16T17:41:05-04:00",
+  "review_detail": "The reviewed workbook is ready to download.",
+  "review_agents": [
+    {
+      "name": "row_review",
+      "label": "Row Reviewer",
+      "status": "completed",
+      "artifact_path": "/Users/chris/Documents/review-pack-template - claude version/review-output/runs/20260316-172603--checklist-optimize-test/row_review_annotations.json",
+      "runtime_dir": "/Users/chris/Documents/review-pack-template - claude version/review-output/runs/20260316-172603--checklist-optimize-test/agent_runs/row_review",
+      "response_path": "/Users/chris/Documents/review-pack-template - claude version/review-output/runs/20260316-172603--checklist-optimize-test/agent_runs/row_review/claude_response.json",
+      "stderr_path": "/Users/chris/Documents/review-pack-template - claude version/review-output/runs/20260316-172603--checklist-optimize-test/agent_runs/row_review/stderr.log",
+      "started_at": "2026-03-16T17:26:03-04:00",
+      "finished_at": "2026-03-16T17:33:04-04:00"
+    },
+    {
+      "name": "pattern_review",
+      "label": "Pattern Reviewer",
+      "status": "completed",
+      "artifact_path": "/Users/chris/Documents/review-pack-template - claude version/review-output/runs/20260316-172603--checklist-optimize-test/pattern_review_annotations.json",
+      "runtime_dir": "/Users/chris/Documents/review-pack-template - claude version/review-output/runs/20260316-172603--checklist-optimize-test/agent_runs/pattern_review",
+      "response_path": "/Users/chris/Documents/review-pack-template - claude version/review-output/runs/20260316-172603--checklist-optimize-test/agent_runs/pattern_review/claude_response.json",
+      "stderr_path": "/Users/chris/Documents/review-pack-template - claude version/review-output/runs/20260316-172603--checklist-optimize-test/agent_runs/pattern_review/stderr.log",
+      "started_at": "2026-03-16T17:26:03-04:00",
+      "finished_at": "2026-03-16T17:32:14-04:00"
+    },
+    {
+      "name": "reconcile_review",
+      "label": "Reconciler",
+      "status": "completed",
+      "artifact_path": "/Users/chris/Documents/review-pack-template - claude version/review-output/runs/20260316-172603--checklist-optimize-test/annotations.json",
+      "runtime_dir": "/Users/chris/Documents/review-pack-template - claude version/review-output/runs/20260316-172603--checklist-optimize-test/agent_runs/reconcile_review",
+      "response_path": "/Users/chris/Documents/review-pack-template - claude version/review-output/runs/20260316-172603--checklist-optimize-test/agent_runs/reconcile_review/claude_response.json",
+      "stderr_path": "/Users/chris/Documents/review-pack-template - claude version/review-output/runs/20260316-172603--checklist-optimize-test/agent_runs/reconcile_review/stderr.log",
+      "started_at": "2026-03-16T17:33:04-04:00",
+      "finished_at": "2026-03-16T17:41:04-04:00"
+    }
+  ],
+  "reviewed_workbook": "/Users/chris/Documents/review-pack-template - claude version/review-output/runs/20260316-172603--checklist-optimize-test/Best-Agency---Transaction-Details-by-Tax-Code-2 - Reviewed.xlsx",
+  "review_heartbeat_at": "2026-03-16T17:41:05-04:00",
+  "usage_summary_path": "/Users/chris/Documents/review-pack-template - claude version/review-output/runs/20260316-172603--checklist-optimize-test/usage_summary.json",
+  "usage_total_tokens": 65522,
+  "usage_input_tokens": 46,
+  "usage_cached_input_tokens": 2048681,
+  "usage_output_tokens": 65476,
+  "usage_estimated_cost_usd": 2.661241
+}

@@ -1,0 +1,54 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 364325,
+  "duration_api_ms": 374599,
+  "num_turns": 17,
+  "result": "Artifact written and validated. Here is the summary:\n\n**15 row annotations** (10 Review Needed, 5 Needs More Context) across **4 pattern clusters** and **1 unmapped observation**.\n\n**Patterns identified:**\n\n| Pattern | Issue | Controls | Rows |\n|---|---|---|---|\n| PAT-ALP-MIXED | Alphabet uses Exempt, GST, and HST ON on Agency Fees. Same project ALP202307 coded GST in Dec but HST ON in Oct. | CHK-007, CHK-005 | 13,14,19-21,26,43-48 |\n| PAT-AMZ-MIXED | Amazon uses GST (Dec) and HST ON (Apr/May) on Agency Fees. | CHK-007 | 17,18,27,31 |\n| PAT-MEALS-SPLIT | T. Spaccio and Hungerhub each split Exempt/M&E on the same meals account. | CHK-018, CHK-015 | 7,10,51-53 |\n| PAT-BILLEXP-SPLIT | Billable Expense: person-named vendors Exempt, company vendors HST ON. | CHK-016, CHK-015 | 11,12,24,29 |\n\n**Standalone row flags:**\n- Row 36: Virtual Assistants bill on Salaries account (CHK-013)\n- Row 38: \"Travel Stipend\" reimbursement language (CHK-020)\n- Rows 8, 9: Exempt purchases needing support (CHK-015)",
+  "stop_reason": null,
+  "session_id": "74eecd7b-16bb-45fa-b00e-4f5f0a31a3d4",
+  "total_cost_usd": 1.1913284999999998,
+  "usage": {
+    "input_tokens": 13,
+    "cache_creation_input_tokens": 72405,
+    "cache_read_input_tokens": 529632,
+    "output_tokens": 18437,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 72405,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-4-6": {
+      "inputTokens": 13,
+      "outputTokens": 18437,
+      "cacheReadInputTokens": 529632,
+      "cacheCreationInputTokens": 72405,
+      "webSearchRequests": 0,
+      "costUSD": 1.17833725,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 5730,
+      "outputTokens": 288,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 4657,
+      "webSearchRequests": 0,
+      "costUSD": 0.01299125,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "uuid": "4226e688-29be-4969-8b1e-ed7df3f5433b"
+}

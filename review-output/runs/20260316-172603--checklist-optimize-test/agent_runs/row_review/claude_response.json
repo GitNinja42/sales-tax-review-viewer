@@ -1,0 +1,54 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 415989,
+  "duration_api_ms": 437308,
+  "num_turns": 20,
+  "result": "Row review complete. Here's a summary of the candidate annotations:\n\n**13 row-level flags across 41 transactions:**\n\n| Rows | Customer/Vendor | Issue | Controls | Status |\n|------|----------------|-------|----------|--------|\n| 8 | New Wave | Exempt marketing bill ($3,452), no support | CHK-015 | Needs More Context |\n| 9 | EpikFliks | Exempt COGS bill, possible subcontractor | CHK-015, CHK-016 | Needs More Context |\n| 11 | Emily G | Exempt freelancer bill ($6,351) | CHK-015, CHK-016 | Needs More Context |\n| 12 | Justine A | Exempt freelancer bill ($1,500) | CHK-015, CHK-016 | Needs More Context |\n| 13-14 | Alphabet | Exempt revenue (invoice + credit memo) while other invoices carry tax | CHK-005 | Review Needed |\n| 17-18 | Amazon | GST in Dec vs HST ON in Apr-May, $200K+ | CHK-007, CHK-005 | Review Needed |\n| 19-21 | Alphabet | Same project (ALP202307) switches from HST ON to GST, $150K | CHK-007, CHK-005 | Review Needed |\n| 36 | Virtual Assistants | Vendor bill on Salaries account | CHK-013 | Review Needed |\n| 38 | That Planted Fork | Restaurant-name vendor on Marketing with full ITC | CHK-018 | Review Needed |\n\n**2 pattern annotations:** Alphabet and Amazon mixed-treatment clusters (CHK-007).\n\n**1 observation:** M&E tax code configuration note (6.5% rate = 50% ITC restriction built in).\n\n28 of 41 rows passed without flags. The unflagged rows had consistent, well-supported tax treatments.",
+  "stop_reason": null,
+  "session_id": "df05cf54-b410-4b9e-8c08-0506e101a4b9",
+  "total_cost_usd": 1.4590394999999994,
+  "usage": {
+    "input_tokens": 19,
+    "cache_creation_input_tokens": 70898,
+    "cache_read_input_tokens": 810544,
+    "output_tokens": 23787,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 70898,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-4-6": {
+      "inputTokens": 19,
+      "outputTokens": 23787,
+      "cacheReadInputTokens": 810544,
+      "cacheCreationInputTokens": 70898,
+      "webSearchRequests": 0,
+      "costUSD": 1.4431545,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 7580,
+      "outputTokens": 427,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 4936,
+      "webSearchRequests": 0,
+      "costUSD": 0.015885000000000003,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "uuid": "476436e5-d22b-4ea2-9924-45739acce143"
+}

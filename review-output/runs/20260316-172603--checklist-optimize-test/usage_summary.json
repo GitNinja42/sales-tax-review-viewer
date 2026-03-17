@@ -1,0 +1,107 @@
+{
+  "agents": [
+    {
+      "name": "row_review",
+      "label": "Row Reviewer",
+      "status": "completed",
+      "session": {
+        "session_id": "df05cf54-b410-4b9e-8c08-0506e101a4b9",
+        "model": "claude-opus-4-6",
+        "response_path": "/Users/chris/Documents/review-pack-template - claude version/review-output/runs/20260316-172603--checklist-optimize-test/agent_runs/row_review/claude_response.json"
+      },
+      "usage": {
+        "input_tokens": 19,
+        "cached_input_tokens": 810544,
+        "output_tokens": 23787,
+        "total_tokens": 23806
+      },
+      "cost": {
+        "pricing_available": true,
+        "model": "claude-opus-4-6",
+        "pricing_model": "claude-opus-4-6",
+        "pricing_source": "https://docs.anthropic.com/en/docs/about-claude/models",
+        "uncached_input_tokens": 0,
+        "cached_input_tokens": 810544,
+        "output_tokens": 23787,
+        "standard_rates_usd_per_million_tokens": {
+          "input": 5.0,
+          "cached_input": 0.5,
+          "output": 25.0
+        },
+        "estimated_cost_usd": 0.999947
+      }
+    },
+    {
+      "name": "pattern_review",
+      "label": "Pattern Reviewer",
+      "status": "completed",
+      "session": {
+        "session_id": "74eecd7b-16bb-45fa-b00e-4f5f0a31a3d4",
+        "model": "claude-opus-4-6",
+        "response_path": "/Users/chris/Documents/review-pack-template - claude version/review-output/runs/20260316-172603--checklist-optimize-test/agent_runs/pattern_review/claude_response.json"
+      },
+      "usage": {
+        "input_tokens": 13,
+        "cached_input_tokens": 529632,
+        "output_tokens": 18437,
+        "total_tokens": 18450
+      },
+      "cost": {
+        "pricing_available": true,
+        "model": "claude-opus-4-6",
+        "pricing_model": "claude-opus-4-6",
+        "pricing_source": "https://docs.anthropic.com/en/docs/about-claude/models",
+        "uncached_input_tokens": 0,
+        "cached_input_tokens": 529632,
+        "output_tokens": 18437,
+        "standard_rates_usd_per_million_tokens": {
+          "input": 5.0,
+          "cached_input": 0.5,
+          "output": 25.0
+        },
+        "estimated_cost_usd": 0.725741
+      }
+    },
+    {
+      "name": "reconcile_review",
+      "label": "Reconciler",
+      "status": "completed",
+      "session": {
+        "session_id": "26d36821-23bb-44e3-8562-c062e85e6dc5",
+        "model": "claude-opus-4-6",
+        "response_path": "/Users/chris/Documents/review-pack-template - claude version/review-output/runs/20260316-172603--checklist-optimize-test/agent_runs/reconcile_review/claude_response.json"
+      },
+      "usage": {
+        "input_tokens": 14,
+        "cached_input_tokens": 708505,
+        "output_tokens": 23252,
+        "total_tokens": 23266
+      },
+      "cost": {
+        "pricing_available": true,
+        "model": "claude-opus-4-6",
+        "pricing_model": "claude-opus-4-6",
+        "pricing_source": "https://docs.anthropic.com/en/docs/about-claude/models",
+        "uncached_input_tokens": 0,
+        "cached_input_tokens": 708505,
+        "output_tokens": 23252,
+        "standard_rates_usd_per_million_tokens": {
+          "input": 5.0,
+          "cached_input": 0.5,
+          "output": 25.0
+        },
+        "estimated_cost_usd": 0.935553
+      }
+    }
+  ],
+  "totals": {
+    "input_tokens": 46,
+    "cached_input_tokens": 2048681,
+    "output_tokens": 65476,
+    "total_tokens": 65522,
+    "estimated_cost_usd": 2.661241,
+    "pricing_available_for_all_agents": true,
+    "agent_count": 3
+  },
+  "missing_agents": []
+}

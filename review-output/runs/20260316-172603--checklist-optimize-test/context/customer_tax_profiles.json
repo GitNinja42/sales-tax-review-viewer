@@ -1,0 +1,412 @@
+[
+  {
+    "normalized_name": "Alphabet",
+    "display_names": [
+      "Alphabet [ALP]",
+      "Alphabet [ALP]:ALP202307 - Prebill (Google Pixel Launch)",
+      "Alphabet [ALP]:ALP202504 - Prebill (Social Media)"
+    ],
+    "tax_codes": {
+      "Exempt": 2,
+      "GST": 3,
+      "HST ON": 7
+    },
+    "accounts": {
+      "4000 Agency Fees": 12
+    },
+    "transaction_types": {
+      "Invoice": 11,
+      "Credit Memo": 1
+    },
+    "row_refs": [
+      13,
+      14,
+      19,
+      20,
+      21,
+      26,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48
+    ],
+    "has_multiple_tax_codes": true
+  },
+  {
+    "normalized_name": "Amazon",
+    "display_names": [
+      "Amazon Company",
+      "Amazon [AMZ]:AMZ202504 - Retainer [April 1, 2025 to December 31, 2025]"
+    ],
+    "tax_codes": {
+      "GST": 2,
+      "HST ON": 2
+    },
+    "accounts": {
+      "4000 Agency Fees": 4
+    },
+    "transaction_types": {
+      "Invoice": 4
+    },
+    "row_refs": [
+      17,
+      18,
+      27,
+      31
+    ],
+    "has_multiple_tax_codes": true
+  },
+  {
+    "normalized_name": "Google",
+    "display_names": [
+      "Google"
+    ],
+    "tax_codes": {
+      "HST ON": 3
+    },
+    "accounts": {
+      "12002 - Prepaid Media - Google": 3
+    },
+    "transaction_types": {
+      "Expense": 3
+    },
+    "row_refs": [
+      34,
+      39,
+      40
+    ],
+    "has_multiple_tax_codes": false
+  },
+  {
+    "normalized_name": "Apple",
+    "display_names": [
+      "Apple [APP]:APP202501 - Retainer [January 1, 2025 to February 28, 2026]"
+    ],
+    "tax_codes": {
+      "HST ON": 2
+    },
+    "accounts": {
+      "4000 Agency Fees": 2
+    },
+    "transaction_types": {
+      "Invoice": 2
+    },
+    "row_refs": [
+      25,
+      30
+    ],
+    "has_multiple_tax_codes": false
+  },
+  {
+    "normalized_name": "Hungerhub",
+    "display_names": [
+      "Hungerhub"
+    ],
+    "tax_codes": {
+      "Exempt": 1,
+      "Meals and Entertainment": 1
+    },
+    "accounts": {
+      "6100 Advertising & Marketing Expense:6102 Meals and Entertainment": 2
+    },
+    "transaction_types": {
+      "Bill": 2
+    },
+    "row_refs": [
+      10,
+      52
+    ],
+    "has_multiple_tax_codes": true
+  },
+  {
+    "normalized_name": "Meta",
+    "display_names": [
+      "Meta [MTA]"
+    ],
+    "tax_codes": {
+      "HST ON": 2
+    },
+    "accounts": {
+      "12001 - Prepaid Media - Facebook": 2
+    },
+    "transaction_types": {
+      "Expense": 2
+    },
+    "row_refs": [
+      33,
+      35
+    ],
+    "has_multiple_tax_codes": false
+  },
+  {
+    "normalized_name": "Netflix",
+    "display_names": [
+      "Netflix [NFX]:NFX202501 - Retainer [January 1, 2025 to December 31, 2025]"
+    ],
+    "tax_codes": {
+      "HST ON": 2
+    },
+    "accounts": {
+      "4000 Agency Fees": 2
+    },
+    "transaction_types": {
+      "Invoice": 2
+    },
+    "row_refs": [
+      28,
+      32
+    ],
+    "has_multiple_tax_codes": false
+  },
+  {
+    "normalized_name": "T. Spaccio",
+    "display_names": [
+      "T. Spaccio"
+    ],
+    "tax_codes": {
+      "Exempt": 1,
+      "Meals and Entertainment": 1
+    },
+    "accounts": {
+      "6100 Advertising & Marketing Expense:6102 Meals and Entertainment": 2
+    },
+    "transaction_types": {
+      "Expense": 2
+    },
+    "row_refs": [
+      7,
+      51
+    ],
+    "has_multiple_tax_codes": true
+  },
+  {
+    "normalized_name": "Emily G",
+    "display_names": [
+      "Emily G"
+    ],
+    "tax_codes": {
+      "Exempt": 1
+    },
+    "accounts": {
+      "5000 Billable Expense": 1
+    },
+    "transaction_types": {
+      "Bill": 1
+    },
+    "row_refs": [
+      11
+    ],
+    "has_multiple_tax_codes": false
+  },
+  {
+    "normalized_name": "EpikFliks",
+    "display_names": [
+      "EpikFliks"
+    ],
+    "tax_codes": {
+      "Exempt": 1
+    },
+    "accounts": {
+      "Cost of Goods Sold": 1
+    },
+    "transaction_types": {
+      "Bill": 1
+    },
+    "row_refs": [
+      9
+    ],
+    "has_multiple_tax_codes": false
+  },
+  {
+    "normalized_name": "Foxglove Studios",
+    "display_names": [
+      "Foxglove Studios"
+    ],
+    "tax_codes": {
+      "HST ON": 1
+    },
+    "accounts": {
+      "5000 Billable Expense": 1
+    },
+    "transaction_types": {
+      "Expense": 1
+    },
+    "row_refs": [
+      24
+    ],
+    "has_multiple_tax_codes": false
+  },
+  {
+    "normalized_name": "Instacart",
+    "display_names": [
+      "Instacart"
+    ],
+    "tax_codes": {
+      "HST ON": 1
+    },
+    "accounts": {
+      "12003 - Prepaid Media - Instacart": 1
+    },
+    "transaction_types": {
+      "Expense": 1
+    },
+    "row_refs": [
+      42
+    ],
+    "has_multiple_tax_codes": false
+  },
+  {
+    "normalized_name": "Justine A",
+    "display_names": [
+      "Justine A"
+    ],
+    "tax_codes": {
+      "Exempt": 1
+    },
+    "accounts": {
+      "5000 Billable Expense": 1
+    },
+    "transaction_types": {
+      "Bill": 1
+    },
+    "row_refs": [
+      12
+    ],
+    "has_multiple_tax_codes": false
+  },
+  {
+    "normalized_name": "MacEwen",
+    "display_names": [
+      "MacEwen"
+    ],
+    "tax_codes": {
+      "HST ON": 1
+    },
+    "accounts": {
+      "6400 Travel:6402 Flights and Ground Travel": 1
+    },
+    "transaction_types": {
+      "Expense": 1
+    },
+    "row_refs": [
+      37
+    ],
+    "has_multiple_tax_codes": false
+  },
+  {
+    "normalized_name": "New Wave",
+    "display_names": [
+      "New Wave"
+    ],
+    "tax_codes": {
+      "Exempt": 1
+    },
+    "accounts": {
+      "6100 Advertising & Marketing Expense": 1
+    },
+    "transaction_types": {
+      "Bill": 1
+    },
+    "row_refs": [
+      8
+    ],
+    "has_multiple_tax_codes": false
+  },
+  {
+    "normalized_name": "Starbucks",
+    "display_names": [
+      "Starbucks"
+    ],
+    "tax_codes": {
+      "Meals and Entertainment": 1
+    },
+    "accounts": {
+      "6100 Advertising & Marketing Expense:6102 Meals and Entertainment": 1
+    },
+    "transaction_types": {
+      "Expense": 1
+    },
+    "row_refs": [
+      53
+    ],
+    "has_multiple_tax_codes": false
+  },
+  {
+    "normalized_name": "That Planted Fork",
+    "display_names": [
+      "That Planted Fork"
+    ],
+    "tax_codes": {
+      "HST ON": 1
+    },
+    "accounts": {
+      "6100 Advertising & Marketing Expense:6101 Marketing Expenses": 1
+    },
+    "transaction_types": {
+      "Bill": 1
+    },
+    "row_refs": [
+      38
+    ],
+    "has_multiple_tax_codes": false
+  },
+  {
+    "normalized_name": "Todotoro",
+    "display_names": [
+      "Todotoro"
+    ],
+    "tax_codes": {
+      "HST ON": 1
+    },
+    "accounts": {
+      "5000 Billable Expense": 1
+    },
+    "transaction_types": {
+      "Bill": 1
+    },
+    "row_refs": [
+      29
+    ],
+    "has_multiple_tax_codes": false
+  },
+  {
+    "normalized_name": "Virtual Assistants",
+    "display_names": [
+      "Virtual Assistants"
+    ],
+    "tax_codes": {
+      "HST ON": 1
+    },
+    "accounts": {
+      "6000 Staff Costs:6001 Salaries": 1
+    },
+    "transaction_types": {
+      "Bill": 1
+    },
+    "row_refs": [
+      36
+    ],
+    "has_multiple_tax_codes": false
+  },
+  {
+    "normalized_name": "Zoom",
+    "display_names": [
+      "Zoom"
+    ],
+    "tax_codes": {
+      "HST ON": 1
+    },
+    "accounts": {
+      "6300 Office Overhead:6301 Dues & Subscriptions": 1
+    },
+    "transaction_types": {
+      "Expense": 1
+    },
+    "row_refs": [
+      41
+    ],
+    "has_multiple_tax_codes": false
+  }
+]

@@ -1,0 +1,168 @@
+{
+  "source_sheet": "Transaction Detail by Tax Code",
+  "output_sheet": "Transaction Detail by Tax Code",
+  "annotation_mode": "inline_columns",
+  "row_annotations": [
+    {
+      "source_row": 7,
+      "status": "Review Needed",
+      "issue_summary": "T. Spaccio coded Exempt on the Meals and Entertainment account here, but coded M&E on the same account in row 51. Same vendor, same account, inconsistent tax treatment across two purchases.",
+      "checklist_refs": ["CHK-018"],
+      "highlight_columns": ["Tax Code"],
+      "suggested_next_step": "Confirm whether this receipt was correctly classified as tax-exempt. The Hubdoc memo notes '(Tax Exempt)' but the same vendor uses M&E treatment elsewhere on the same account."
+    },
+    {
+      "source_row": 8,
+      "status": "Needs More Context",
+      "issue_summary": "New Wave billed for 'TikTok Shop & Ads Services' on the Advertising & Marketing Expense account, coded Exempt. Advertising services from a domestic registered vendor would normally carry GST/HST.",
+      "checklist_refs": ["CHK-015"],
+      "highlight_columns": ["Tax Code"],
+      "missing_context": ["Vendor GST/HST registration status", "Whether vendor is domestic or non-resident"],
+      "suggested_next_step": "Verify whether New Wave is a non-registered or non-resident vendor to support the Exempt treatment."
+    },
+    {
+      "source_row": 9,
+      "status": "Needs More Context",
+      "issue_summary": "EpikFliks bill coded Exempt on Cost of Goods Sold. Memo references 'NFX202501' (a Netflix project code). No visible support for exempt treatment on this purchase.",
+      "checklist_refs": ["CHK-015"],
+      "highlight_columns": ["Tax Code"],
+      "missing_context": ["Vendor GST/HST registration status", "Nature of the supply (digital, exempt category, or non-resident)"],
+      "suggested_next_step": "Confirm whether EpikFliks is a non-registered vendor or if the supply falls within an accepted exempt category."
+    },
+    {
+      "source_row": 10,
+      "status": "Review Needed",
+      "issue_summary": "Hungerhub coded Exempt on the Meals and Entertainment account here, but coded M&E on the same account in row 52. Same vendor, same account, inconsistent tax treatment across two purchases.",
+      "checklist_refs": ["CHK-018"],
+      "highlight_columns": ["Tax Code"],
+      "suggested_next_step": "Confirm whether this receipt was correctly classified as tax-exempt. The Hubdoc memo notes '(Tax Exempt)' but the same vendor uses M&E treatment elsewhere on the same account."
+    },
+    {
+      "source_row": 11,
+      "status": "Needs More Context",
+      "issue_summary": "Person-named vendor 'Emily G' billed Exempt on Billable Expense. Memo references client project ALP202504. Other Billable Expense vendors (Foxglove Studios, Todotoro) use HST ON. May be a freelancer or subcontractor whose registration status determines the correct treatment.",
+      "checklist_refs": ["CHK-016", "CHK-015"],
+      "highlight_columns": ["Tax Code", "Name"],
+      "missing_context": ["Vendor GST/HST registration status", "Whether vendor is a freelancer or subcontractor"],
+      "suggested_next_step": "Verify Emily G's GST/HST registration status. If registered, the Exempt code may be incorrect."
+    },
+    {
+      "source_row": 12,
+      "status": "Needs More Context",
+      "issue_summary": "Person-named vendor 'Justine A' billed Exempt on Billable Expense. Memo references 'AMZ202504 Project'. Other Billable Expense vendors (Foxglove Studios, Todotoro) use HST ON. May be a freelancer or subcontractor whose registration status determines the correct treatment.",
+      "checklist_refs": ["CHK-016", "CHK-015"],
+      "highlight_columns": ["Tax Code", "Name"],
+      "missing_context": ["Vendor GST/HST registration status", "Whether vendor is a freelancer or subcontractor"],
+      "suggested_next_step": "Verify Justine A's GST/HST registration status. If registered, the Exempt code may be incorrect."
+    },
+    {
+      "source_row": 13,
+      "status": "Review Needed",
+      "issue_summary": "Alphabet Credit Memo 1028 coded Exempt on Agency Fees (a revenue account). This reverses Invoice 1027 (row 14), which was also coded Exempt. All other Alphabet revenue invoices use GST or HST ON. The Exempt treatment on a revenue item is inconsistent with Alphabet's established pattern, even though the pair nets to zero.",
+      "checklist_refs": ["CHK-005", "CHK-007", "CHK-008"],
+      "highlight_columns": ["Tax Code"],
+      "suggested_next_step": "Confirm whether the Exempt treatment was intentional for this deferred invoice pair. If the replacement invoice carries GST or HST, the original pair should ideally match."
+    },
+    {
+      "source_row": 14,
+      "status": "Review Needed",
+      "issue_summary": "Alphabet Invoice 1027 coded Exempt on Agency Fees. Part of a same-day invoice/credit memo pair with row 13 ('pushed to next month'). All other Alphabet revenue invoices use GST or HST ON. Exempt on a revenue item is unexpected given the customer's treatment elsewhere.",
+      "checklist_refs": ["CHK-005", "CHK-007", "CHK-008"],
+      "highlight_columns": ["Tax Code"],
+      "suggested_next_step": "Confirm why this prebill invoice used Exempt rather than the customer's usual GST or HST ON treatment."
+    },
+    {
+      "source_row": 17,
+      "status": "Review Needed",
+      "issue_summary": "Amazon coded GST on Agency Fees here, but uses HST ON on the same account in rows 27 and 31. Same customer, same revenue account, different tax codes across periods. This is the larger of the two lines on Invoice 1003 ($200,000 net).",
+      "checklist_refs": ["CHK-007"],
+      "highlight_columns": ["Tax Code", "Name"],
+      "suggested_next_step": "Determine whether the GST treatment on this December 2025 invoice reflects a legitimate change (e.g., place of supply) or a coding error. Compare with the HST ON treatment on earlier Amazon invoices."
+    },
+    {
+      "source_row": 18,
+      "status": "Review Needed",
+      "issue_summary": "Amazon coded GST on Agency Fees (second line on Invoice 1003, $200 net). Same inconsistency as row 17: Amazon uses HST ON on other Agency Fees invoices (rows 27, 31).",
+      "checklist_refs": ["CHK-007"],
+      "highlight_columns": ["Tax Code"],
+      "suggested_next_step": "Review alongside row 17. Same invoice, same inconsistency with the HST ON treatment on earlier Amazon invoices."
+    },
+    {
+      "source_row": 19,
+      "status": "Review Needed",
+      "issue_summary": "Alphabet project ALP202307 (Google Pixel Launch) coded GST here, but the same project uses HST ON on rows 43-48 (Invoices 1001/1002, October 2025). Same project, same customer, same revenue account, different tax code across periods.",
+      "checklist_refs": ["CHK-007"],
+      "highlight_columns": ["Tax Code", "Name"],
+      "suggested_next_step": "Determine whether the GST code on this December 2025 invoice is correct when the same project used HST ON in October 2025."
+    },
+    {
+      "source_row": 20,
+      "status": "Review Needed",
+      "issue_summary": "Second line on Invoice 1004 for Alphabet ALP202307, coded GST. Same project uses HST ON on rows 43-48. Inconsistent with October treatment of the same project.",
+      "checklist_refs": ["CHK-007"],
+      "highlight_columns": ["Tax Code"],
+      "suggested_next_step": "Review alongside rows 19 and 21. Same invoice, same project-level inconsistency."
+    },
+    {
+      "source_row": 21,
+      "status": "Review Needed",
+      "issue_summary": "Third line on Invoice 1004 for Alphabet ALP202307, coded GST. Same project uses HST ON on rows 43-48. Inconsistent with October treatment of the same project.",
+      "checklist_refs": ["CHK-007"],
+      "highlight_columns": ["Tax Code"],
+      "suggested_next_step": "Review alongside rows 19 and 20. Same invoice, same project-level inconsistency."
+    },
+    {
+      "source_row": 36,
+      "status": "Review Needed",
+      "issue_summary": "Bill from 'Virtual Assistants' for 'Virtual Admin Service' booked to 6000 Staff Costs:6001 Salaries with HST ON. A vendor bill on a salary account is unusual. The HST treatment suggests a legitimate vendor purchase, but the salary account placement raises a question about whether this item belongs in the ITC review population as-is.",
+      "checklist_refs": ["CHK-013"],
+      "highlight_columns": ["Account"],
+      "suggested_next_step": "Confirm whether this vendor service is correctly booked to a Salaries account or should be reclassified to a services/contractor expense account."
+    },
+    {
+      "source_row": 38,
+      "status": "Needs More Context",
+      "issue_summary": "Bill from That Planted Fork described as 'Travel Stipend' on Marketing Expenses with HST ON. 'Stipend' language suggests a reimbursement or fixed allowance rather than a direct vendor service, which could affect ITC eligibility.",
+      "checklist_refs": ["CHK-020"],
+      "highlight_columns": ["Memo/Description"],
+      "missing_context": ["Whether this is a reimbursement, pass-through, or direct vendor service"],
+      "suggested_next_step": "Clarify the nature of this payment. If it is a reimbursement or stipend passed through to a third party, the ITC treatment may need review."
+    }
+  ],
+  "pattern_annotations": [
+    {
+      "pattern_id": "PAT-ALP-MIXED",
+      "issue_summary": "Alphabet uses three different tax codes (Exempt, GST, HST ON) on the same revenue account (4000 Agency Fees) across 12 rows. Most notably, the same project ALP202307 (Google Pixel Launch) is coded GST on Invoice 1004 (rows 19-21, December 2025) but HST ON on Invoices 1001/1002 (rows 43-48, October 2025). Separately, an invoice/credit memo pair (rows 13-14) uses Exempt for a 'Prebill project' that nets to zero. The three-way split across the same customer and account is the strongest mixed-treatment pattern in the workbook.",
+      "checklist_refs": ["CHK-007", "CHK-005"],
+      "row_refs": [13, 14, 19, 20, 21, 26, 43, 44, 45, 46, 47, 48]
+    },
+    {
+      "pattern_id": "PAT-AMZ-MIXED",
+      "issue_summary": "Amazon uses GST on Invoice 1003 (rows 17-18, December 2025, display name 'Amazon Company') and HST ON on Invoices 1021/1022 (rows 27/31, April-May 2025, display name 'Amazon [AMZ]:AMZ202504'). Same customer, same revenue account (4000 Agency Fees), inconsistent tax codes across periods. The display name difference does not explain the tax code change.",
+      "checklist_refs": ["CHK-007"],
+      "row_refs": [17, 18, 27, 31]
+    },
+    {
+      "pattern_id": "PAT-MEALS-SPLIT",
+      "issue_summary": "Two meals vendors (T. Spaccio and Hungerhub) each appear once as Exempt and once as Meals and Entertainment on the same account (6102 Meals and Entertainment). The Exempt rows (7, 10) reference Hubdoc IDs with '(Tax Exempt)' notation, while the M&E rows (51, 52) reference similar but distinct Hubdoc IDs without the notation. The split may reflect legitimate differences between receipts, but the same-vendor same-account inconsistency warrants review.",
+      "checklist_refs": ["CHK-018", "CHK-015"],
+      "row_refs": [7, 10, 51, 52, 53]
+    },
+    {
+      "pattern_id": "PAT-BILLEXP-SPLIT",
+      "issue_summary": "The Billable Expense account (5000) splits between Exempt for person-named vendors (Emily G row 11, Justine A row 12) and HST ON for company-named vendors (Foxglove Studios row 24, Todotoro row 29). The person-named vendors reference specific client project codes (ALP202504, AMZ202504) in their memos. The split may reflect non-registered freelancers vs. registered companies, but vendor registration status is not visible in the workbook.",
+      "checklist_refs": ["CHK-016", "CHK-015"],
+      "row_refs": [11, 12, 24, 29],
+      "missing_context": ["Vendor GST/HST registration status for Emily G and Justine A"]
+    }
+  ],
+  "unmapped_observations": [
+    {
+      "observation_id": "OBS-HUBDOC-IDS",
+      "issue_summary": "The Hubdoc receipt IDs in the Exempt meals rows (row 7: '72395120', row 10: '723880967') differ from the M&E rows for the same vendors (row 51: '7295120', row 52: '7230967'). The IDs are similar but not identical, confirming these are distinct receipts rather than duplicate entries. This supports that the Exempt and M&E transactions are separate purchases, but does not explain why the same vendor would receive different tax treatment on the same account.",
+      "row_refs": [7, 10, 51, 52],
+      "reason_not_checklist_flag": "The Hubdoc ID observation is supplementary evidence about receipt provenance, not a direct checklist concern. The tax code inconsistency itself is flagged under PAT-MEALS-SPLIT.",
+      "suggested_follow_up": "If investigating the meals split, the distinct Hubdoc IDs can help locate the original source receipts."
+    }
+  ]
+}

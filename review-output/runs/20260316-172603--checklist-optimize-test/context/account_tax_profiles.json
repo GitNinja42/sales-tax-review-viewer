@@ -1,0 +1,238 @@
+[
+  {
+    "account": "4000 Agency Fees",
+    "tax_codes": {
+      "Exempt": 2,
+      "GST": 5,
+      "HST ON": 13
+    },
+    "transaction_types": {
+      "Invoice": 19,
+      "Credit Memo": 1
+    },
+    "names": {
+      "Alphabet": 12,
+      "Amazon": 4,
+      "Apple": 2,
+      "Netflix": 2
+    },
+    "row_refs": [
+      13,
+      14,
+      17,
+      18,
+      19,
+      20,
+      21,
+      25,
+      26,
+      27,
+      28,
+      30,
+      31,
+      32,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48
+    ],
+    "has_multiple_tax_codes": true
+  },
+  {
+    "account": "6100 Advertising & Marketing Expense:6102 Meals and Entertainment",
+    "tax_codes": {
+      "Exempt": 2,
+      "Meals and Entertainment": 3
+    },
+    "transaction_types": {
+      "Expense": 3,
+      "Bill": 2
+    },
+    "names": {
+      "Hungerhub": 2,
+      "T. Spaccio": 2,
+      "Starbucks": 1
+    },
+    "row_refs": [
+      7,
+      10,
+      51,
+      52,
+      53
+    ],
+    "has_multiple_tax_codes": true
+  },
+  {
+    "account": "5000 Billable Expense",
+    "tax_codes": {
+      "Exempt": 2,
+      "HST ON": 2
+    },
+    "transaction_types": {
+      "Bill": 3,
+      "Expense": 1
+    },
+    "names": {
+      "Emily G": 1,
+      "Foxglove Studios": 1,
+      "Justine A": 1,
+      "Todotoro": 1
+    },
+    "row_refs": [
+      11,
+      12,
+      24,
+      29
+    ],
+    "has_multiple_tax_codes": true
+  },
+  {
+    "account": "12002 - Prepaid Media - Google",
+    "tax_codes": {
+      "HST ON": 3
+    },
+    "transaction_types": {
+      "Expense": 3
+    },
+    "names": {
+      "Google": 3
+    },
+    "row_refs": [
+      34,
+      39,
+      40
+    ],
+    "has_multiple_tax_codes": false
+  },
+  {
+    "account": "12001 - Prepaid Media - Facebook",
+    "tax_codes": {
+      "HST ON": 2
+    },
+    "transaction_types": {
+      "Expense": 2
+    },
+    "names": {
+      "Meta": 2
+    },
+    "row_refs": [
+      33,
+      35
+    ],
+    "has_multiple_tax_codes": false
+  },
+  {
+    "account": "12003 - Prepaid Media - Instacart",
+    "tax_codes": {
+      "HST ON": 1
+    },
+    "transaction_types": {
+      "Expense": 1
+    },
+    "names": {
+      "Instacart": 1
+    },
+    "row_refs": [
+      42
+    ],
+    "has_multiple_tax_codes": false
+  },
+  {
+    "account": "6000 Staff Costs:6001 Salaries",
+    "tax_codes": {
+      "HST ON": 1
+    },
+    "transaction_types": {
+      "Bill": 1
+    },
+    "names": {
+      "Virtual Assistants": 1
+    },
+    "row_refs": [
+      36
+    ],
+    "has_multiple_tax_codes": false
+  },
+  {
+    "account": "6100 Advertising & Marketing Expense",
+    "tax_codes": {
+      "Exempt": 1
+    },
+    "transaction_types": {
+      "Bill": 1
+    },
+    "names": {
+      "New Wave": 1
+    },
+    "row_refs": [
+      8
+    ],
+    "has_multiple_tax_codes": false
+  },
+  {
+    "account": "6100 Advertising & Marketing Expense:6101 Marketing Expenses",
+    "tax_codes": {
+      "HST ON": 1
+    },
+    "transaction_types": {
+      "Bill": 1
+    },
+    "names": {
+      "That Planted Fork": 1
+    },
+    "row_refs": [
+      38
+    ],
+    "has_multiple_tax_codes": false
+  },
+  {
+    "account": "6300 Office Overhead:6301 Dues & Subscriptions",
+    "tax_codes": {
+      "HST ON": 1
+    },
+    "transaction_types": {
+      "Expense": 1
+    },
+    "names": {
+      "Zoom": 1
+    },
+    "row_refs": [
+      41
+    ],
+    "has_multiple_tax_codes": false
+  },
+  {
+    "account": "6400 Travel:6402 Flights and Ground Travel",
+    "tax_codes": {
+      "HST ON": 1
+    },
+    "transaction_types": {
+      "Expense": 1
+    },
+    "names": {
+      "MacEwen": 1
+    },
+    "row_refs": [
+      37
+    ],
+    "has_multiple_tax_codes": false
+  },
+  {
+    "account": "Cost of Goods Sold",
+    "tax_codes": {
+      "Exempt": 1
+    },
+    "transaction_types": {
+      "Bill": 1
+    },
+    "names": {
+      "EpikFliks": 1
+    },
+    "row_refs": [
+      9
+    ],
+    "has_multiple_tax_codes": false
+  }
+]
