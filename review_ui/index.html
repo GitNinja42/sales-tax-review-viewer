@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sales Tax Review Workspace</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css?v=20260315-runner-2" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand-lockup">
+          <span class="brand-dot" aria-hidden="true"></span>
+          <span class="brand-wordmark">review workspace</span>
+        </div>
+        <span class="brand-chip">sales tax</span>
+      </header>
+
+      <main class="primary-card panel">
+        <!-- Phase 1: Submit -->
+        <div class="phase phase-submit is-active" id="phaseSubmit">
+          <h2>Submit a workbook for review</h2>
+          <p class="phase-copy">Upload your QuickBooks sales-tax workbook. The agent will review it and produce a commented copy.</p>
+
+          <label class="dropzone" id="workbookDropzone" for="workbookInput">
+            <input id="workbookInput" type="file" accept=".xlsx" hidden />
+            <span class="dropzone-kicker">Source workbook</span>
+            <strong>Drop your .xlsx file here or click to browse</strong>
+          </label>
+
+          <div class="file-stack" id="workbookFileList"></div>
+
+          <details class="options-drawer">
+            <summary>Options (support files, label, note)</summary>
+            <div class="options-body">
+              <div class="option-section">
+                <label class="notes-label">Support files</label>
+                <label class="dropzone dropzone-compact" id="supportDropzone" for="supportInput">
+                  <input id="supportInput" type="file" accept=".pdf,.csv,.xlsx,.xls,.json,.md,.txt" multiple hidden />
+                  <strong>Checklists, matrices, tax references</strong>
+                  <span class="dropzone-copy">These help the agent produce a more accurate review.</span>
+                </label>
+                <div class="file-stack" id="supportFileList"></div>
+              </div>
+
+              <div class="option-section">
+                <label class="notes-label" for="runLabelInput">Run label</label>
+                <input id="runLabelInput" class="text-input" type="text" placeholder="Example: best-agency-march" />
+              </div>
+
+              <div class="option-section">
+                <label class="notes-label" for="notesInput">Note</label>
+                <textarea id="notesInput" rows="3" placeholder="Optional note for this review."></textarea>
+              </div>
+            </div>
+          </details>
+
+          <div class="inline-feedback inline-feedback-error" id="submitError" role="alert" aria-live="polite" hidden></div>
+
+          <button class="button button-primary button-full" id="submitButton" disabled>Submit for review</button>
+        </div>
+
+        <!-- Phase 2: Processing -->
+        <div class="phase phase-processing" id="phaseProcessing">
+          <div class="processing-visual">
+            <div class="spinner"></div>
+            <h2>Reviewing your workbook...</h2>
+            <p class="elapsed" id="elapsedText">Started just now</p>
+          </div>
+          <p class="processing-hint">The automatic review runs in the background. The status below tells you the current step and whether the run still looks active.</p>
+          <div class="processing-status">
+            <p class="processing-status-line" id="processingStatusLine">Preparing the workbook review.</p>
+            <p class="processing-status-meta" id="processingHeartbeatLine">Progress updates will appear here.</p>
+          </div>
+
+          <details class="advanced-escape">
+            <summary>Recover an interrupted run</summary>
+            <div class="options-body">
+              <label class="dropzone dropzone-compact" id="annotationsDropzone" for="annotationsInput">
+                <input id="annotationsInput" type="file" accept=".json" hidden />
+                <strong>Apply a matching <code>annotations.json</code> file</strong>
+                <span class="dropzone-copy">You can ignore this during a normal run. Use it only if the automatic review stopped early and you already have a matching <code>annotations.json</code> file for this run.</span>
+              </label>
+              <div class="file-stack" id="annotationsFileList"></div>
+              <button class="button button-secondary button-full" id="manualApplyButton" disabled>Apply annotations.json</button>
+            </div>
+          </details>
+
+          <button class="button button-ghost" id="newDuringProcessing">Start another review</button>
+        </div>
+
+        <!-- Phase 3: Complete -->
+        <div class="phase phase-complete" id="phaseComplete">
+          <div class="complete-visual">
+            <svg class="checkmark-icon" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="26" cy="26" r="25" stroke="currentColor" stroke-width="2"/>
+              <path d="M14 27l8 8 16-16" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <h2>Your reviewed workbook is ready</h2>
+          </div>
+
+          <div class="stats-row">
+            <div class="stat">
+              <span class="stat-value" id="statAnnotations">0</span>
+              <span class="stat-label">Row annotations</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value" id="statFlags">0</span>
+              <span class="stat-label">Pattern flags</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value" id="statRows">0</span>
+              <span class="stat-label">Transaction rows</span>
+            </div>
+          </div>
+          <p class="complete-summary" id="completeSummary"></p>
+
+          <div class="button-stack">
+            <a class="button button-primary button-full" id="downloadButton" href="#">Download reviewed workbook</a>
+            <a class="button button-secondary button-full" id="viewerButton" href="#">Open review viewer</a>
+          </div>
+          <button class="button button-ghost" id="startNewButton">Start new review</button>
+        </div>
+
+        <!-- Phase: Error -->
+        <div class="phase phase-error" id="phaseError">
+          <div class="error-visual">
+            <h2>Something went wrong</h2>
+            <p class="error-text" id="errorText">We had trouble finalizing your review.</p>
+          </div>
+          <button class="button button-primary button-full" id="retryButton">Retry</button>
+          <button class="button button-ghost" id="errorNewButton">Start new review</button>
+        </div>
+      </main>
+
+      <section class="history-section" id="historySection">
+        <h3>Previous reviews</h3>
+        <div class="run-list" id="runList">
+          <p class="empty-copy">No reviews yet.</p>
+        </div>
+      </section>
+    </div>
+
+    <template id="filePillTemplate">
+      <div class="file-pill">
+        <div class="file-pill-copy">
+          <span class="file-pill-label"></span>
+          <strong class="file-pill-name"></strong>
+        </div>
+        <button class="pill-remove" type="button" aria-label="Remove file">Remove</button>
+      </div>
+    </template>
+
+    <template id="runItemTemplate">
+      <div class="run-item">
+        <div class="run-item-copy">
+          <div class="run-item-topline">
+            <strong class="run-item-label"></strong>
+            <span class="run-status"></span>
+          </div>
+          <p class="run-item-meta"></p>
+          <p class="run-item-submeta"></p>
+        </div>
+        <div class="run-item-actions"></div>
+      </div>
+    </template>
+
+    <script src="/app.js?v=20260315-3" defer></script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "version": "0.4",
+  "note": "Machine-readable index for validation and workbook scripts. The LLM reads sales-tax-review-guide.md for review guidance.",
+  "controls": [
+    { "control_id": "CHK-001", "title": "QuickBooks exception output", "area": "system", "requires_support_docs": true },
+    { "control_id": "CHK-002", "title": "Prior-period change review", "area": "system", "requires_support_docs": true },
+    { "control_id": "CHK-003", "title": "Allowed transaction types in sales population", "area": "sales_collected" },
+    { "control_id": "CHK-004", "title": "Out-of-scope item in sales population", "area": "sales_collected" },
+    { "control_id": "CHK-005", "title": "Revenue item uses unexpected tax code", "area": "sales_collected" },
+    { "control_id": "CHK-006", "title": "Expected customer treatment mismatch", "area": "sales_collected", "requires_support_docs": true },
+    { "control_id": "CHK-007", "title": "Same customer has inconsistent sales tax treatment", "area": "sales_collected" },
+    { "control_id": "CHK-008", "title": "Internal invoice and internal credit memo mismatch", "area": "sales_collected" },
+    { "control_id": "CHK-009", "title": "Journal entry affecting sales tax lines", "area": "sales_collected" },
+    { "control_id": "CHK-010", "title": "Deposit or reimbursement treated as taxable supply", "area": "sales_collected" },
+    { "control_id": "CHK-011", "title": "Provincial overlay mismatch", "area": "overlay", "requires_support_docs": true },
+    { "control_id": "CHK-012", "title": "Allowed transaction types in ITC population", "area": "itc" },
+    { "control_id": "CHK-013", "title": "Out-of-scope item in ITC population", "area": "itc" },
+    { "control_id": "CHK-014", "title": "Zero-rated purchase needs support", "area": "itc" },
+    { "control_id": "CHK-015", "title": "Exempt purchase needs support", "area": "itc" },
+    { "control_id": "CHK-016", "title": "Freelancer or subcontractor tax review", "area": "itc" },
+    { "control_id": "CHK-017", "title": "GST or HST amount reasonability on purchases", "area": "itc" },
+    { "control_id": "CHK-018", "title": "Review the Expenses with Meals Tax Code", "area": "itc" },
+    { "control_id": "CHK-019", "title": "Staff event ITC recovery review", "area": "itc" },
+    { "control_id": "CHK-020", "title": "Intercompany or reimbursement purchase review", "area": "itc" }
+  ]
+}

@@ -1,0 +1,16 @@
+Use this only after the workbook review is complete and a reviewed workbook already exists.
+
+You are writing client-facing documentation explaining a completed sales-tax workbook review.
+
+Use the reviewed workbook and the client checklist as the basis for the explanation.
+Do not introduce external tax analysis unless explicitly requested.
+
+Your task:
+1. explain what files were reviewed
+2. explain the review method in checklist-first terms
+3. summarize the types of issues flagged
+4. explain what the annotations in the workbook mean
+5. clearly distinguish checklist-backed findings from items that need more client context
+6. if present, explain any non-checklist observations as secondary observations rather than formal checklist findings
+
+The output should be concise, client-friendly, and easy for a CPA to validate.

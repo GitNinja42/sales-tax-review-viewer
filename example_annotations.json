@@ -1,0 +1,41 @@
+{
+  "source_sheet": "Transaction Detail by Tax Code",
+  "output_sheet": "Transaction Detail by Tax Code",
+  "annotation_mode": "inline_columns",
+  "row_annotations": [
+    {
+      "source_row": 7,
+      "status": "Review Needed",
+      "issue_summary": "T. Spaccio coded Exempt on M&E account (6102). Same vendor on the same date uses the Meals and Entertainment tax code at row 51. Memo notes '(Tax Exempt)' but Exempt treatment on a meals expense suppresses ITC recovery. If this is a receipt split, the Exempt portion needs support.",
+      "checklist_refs": ["CHK-015", "CHK-018"],
+      "highlight_columns": ["Tax Code", "Account"],
+      "suggested_next_step": "Confirm whether this T. Spaccio transaction is genuinely exempt or should use the Meals and Entertainment tax code consistent with row 51."
+    },
+    {
+      "source_row": 11,
+      "status": "Needs More Context",
+      "issue_summary": "Emily G (person-name vendor) billed $6,351.18 on Billable Expense coded Exempt. If Emily G is a freelancer without GST/HST registration, Exempt may be correct, but vendor registration status is needed.",
+      "checklist_refs": ["CHK-016", "CHK-015"],
+      "missing_context": ["vendor_registration_status", "supporting_invoice"],
+      "highlight_columns": ["Tax Code", "Name"],
+      "suggested_next_step": "Confirm whether Emily G is GST/HST-registered."
+    }
+  ],
+  "pattern_annotations": [
+    {
+      "pattern_id": "PAT-001",
+      "issue_summary": "Multiple Exempt-coded transactions on the same M&E account (6102) where the same vendor appears under Meals and Entertainment tax code on the same date. Suggests bill splits where the Exempt portion may not be justified.",
+      "checklist_refs": ["CHK-015", "CHK-018"],
+      "row_refs": [7, 10]
+    }
+  ],
+  "unmapped_observations": [
+    {
+      "observation_id": "OBS-001",
+      "issue_summary": "Three vendors appear only once in the workbook with unusually round dollar amounts. Not a checklist concern but may warrant a second look.",
+      "row_refs": [23, 45, 67],
+      "reason_not_checklist_flag": "No checklist item covers vendor frequency or round-number anomalies.",
+      "suggested_follow_up": "Verify invoices exist for these one-off vendors."
+    }
+  ]
+}

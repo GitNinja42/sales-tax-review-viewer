@@ -1,0 +1,152 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Agentic Workbook Review Annotations",
+  "type": "object",
+  "required": [
+    "source_sheet",
+    "output_sheet",
+    "annotation_mode",
+    "row_annotations",
+    "pattern_annotations"
+  ],
+  "properties": {
+    "source_sheet": {
+      "type": "string"
+    },
+    "output_sheet": {
+      "type": "string"
+    },
+    "annotation_mode": {
+      "type": "string",
+      "enum": [
+        "inline_columns"
+      ]
+    },
+    "row_annotations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "source_row",
+          "status",
+          "issue_summary",
+          "checklist_refs"
+        ],
+        "properties": {
+          "source_row": {
+            "type": "integer"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "Review Needed",
+              "Needs More Context"
+            ]
+          },
+          "issue_summary": {
+            "type": "string"
+          },
+          "checklist_refs": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "missing_context": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "suggested_next_step": {
+            "type": "string"
+          },
+          "highlight_columns": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "_dismissed": {
+            "type": "boolean",
+            "description": "Set by the viewer when a row is dismissed. Not produced by the agent."
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "pattern_annotations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "pattern_id",
+          "issue_summary",
+          "checklist_refs",
+          "row_refs"
+        ],
+        "properties": {
+          "pattern_id": {
+            "type": "string"
+          },
+          "issue_summary": {
+            "type": "string"
+          },
+          "checklist_refs": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "row_refs": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "integer"
+            }
+          },
+          "missing_context": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "unmapped_observations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "issue_summary"
+        ],
+        "properties": {
+          "observation_id": {
+            "type": "string"
+          },
+          "issue_summary": {
+            "type": "string"
+          },
+          "row_refs": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "reason_not_checklist_flag": {
+            "type": "string"
+          },
+          "suggested_follow_up": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+review-output/
+review-inputs/*.xlsx
+.DS_Store
+.claude/
+*.xlsx
+node_modules/

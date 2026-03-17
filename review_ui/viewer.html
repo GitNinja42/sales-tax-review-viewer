@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Review Viewer</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css?v=20260316-viewer-32" />
+  </head>
+  <body class="viewer-body">
+    <div class="viewer-shell">
+      <header class="viewer-hero panel">
+        <div class="viewer-hero-row">
+          <div class="viewer-hero-left">
+            <a class="viewer-back-link" href="/">&larr; Back</a>
+            <h1 class="viewer-hero-title" id="viewerTitle">Loading...</h1>
+          </div>
+          <div class="viewer-hero-actions">
+            <span class="workbook-stale-badge is-hidden" id="workbookStaleBadge">Workbook out of date</span>
+            <button class="button button-secondary button-sm is-hidden" id="regenerateButton" type="button">Regenerate workbook</button>
+            <a class="button button-ghost button-sm" id="viewerDownloadLink" href="#">Download workbook</a>
+          </div>
+        </div>
+        <p class="viewer-hero-subtitle" id="viewerSubtitle">Preparing row-level review context.</p>
+      </header>
+
+      <details class="viewer-collapsible viewer-toolbar panel">
+        <summary class="viewer-collapsible-summary">
+          <div>
+            <p class="viewer-kicker">Review controls</p>
+            <h2>Search and filters</h2>
+            <p id="filterSummary">Search all rows or tighten the review set.</p>
+          </div>
+          <span class="viewer-collapsible-toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="viewer-collapsible-body">
+          <div class="viewer-toolbar-main">
+            <label class="viewer-search">
+              <span>Search rows</span>
+              <input id="searchInput" type="search" placeholder="Customer, account, memo, issue summary..." />
+            </label>
+            <label class="viewer-checklist-filter">
+              <span>Checklist question</span>
+              <select id="checklistFilter">
+                <option value="all">All checklist questions</option>
+              </select>
+            </label>
+          </div>
+          <div class="viewer-toolbar-secondary">
+            <div class="viewer-focus-pill is-hidden" id="focusPill">
+              <span id="focusLabel">Focused set</span>
+              <button class="pill-remove" id="clearFocusButton" type="button">Clear</button>
+            </div>
+          </div>
+          <div class="viewer-status-chips" id="statusChips"></div>
+        </div>
+      </details>
+
+      <div class="viewer-layout" id="viewerLayout">
+        <section class="viewer-table-panel panel">
+          <div class="viewer-section-head">
+            <div>
+              <h2>Transaction rows</h2>
+              <p id="tableMeta">Loading rows...</p>
+            </div>
+            <div class="viewer-section-actions">
+              <label class="viewer-toggle viewer-toggle-inline">
+                <input id="flaggedOnlyToggle" type="checkbox" checked />
+                <span>Flagged only</span>
+              </label>
+              <button class="button button-ghost button-sm is-hidden" id="clearAllFiltersButton" type="button">
+                Clear filters
+              </button>
+              <button class="button button-ghost viewer-layout-button" id="expandSpreadsheetButton" type="button">
+                Expand spreadsheet
+              </button>
+            </div>
+          </div>
+          <div class="viewer-table-wrap">
+            <table class="viewer-table">
+              <thead>
+                <tr>
+                  <th class="table-col-row">Row</th>
+                  <th class="table-col-status">Status</th>
+                  <th class="table-col-name">Name</th>
+                  <th class="table-col-account">Account</th>
+                  <th class="table-col-tax">Tax code</th>
+                  <th class="table-col-memo">Memo / description</th>
+                  <th class="table-col-issue">Review note</th>
+                </tr>
+              </thead>
+              <tbody id="viewerTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <div class="panel-resize-handle" id="panelResizeHandle"></div>
+        <aside class="viewer-detail-panel panel" id="detailPanel">
+          <div class="viewer-empty-detail" id="emptyDetail">
+            <h2>Select a row</h2>
+            <p>Choose a row from the table to see the flag reason, highlighted evidence, and similar rows you can review together.</p>
+          </div>
+          <div class="viewer-detail is-hidden" id="detailContent">
+            <div class="viewer-detail-head">
+              <div>
+                <p class="viewer-kicker" id="detailKicker">Row</p>
+                <h2 id="detailTitle">Row detail</h2>
+              </div>
+              <span class="viewer-status-badge" id="detailStatus">Unflagged</span>
+            </div>
+
+            <div class="detail-meta-row">
+              <div class="token-list detail-meta" id="detailMeta"></div>
+              <div class="detail-inline-feedback" id="feedbackShell">
+                <div class="feedback-votes" id="feedbackVotes">
+                  <button class="feedback-vote feedback-vote-up" id="feedbackUpButton" type="button" aria-label="Helpful flag">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M7 10v10M14 10V5.5A2.5 2.5 0 0 0 11.5 3L7 10v10h9.2a2 2 0 0 0 1.96-1.62l1.2-6A2 2 0 0 0 17.4 10H14Z"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.8"
+                      />
+                      <path
+                        d="M4 10h3v10H4a1 1 0 0 1-1-1v-8a1 1 0 0 1 1-1Z"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.8"
+                      />
+                    </svg>
+                    <span class="sr-only">Thumbs up</span>
+                  </button>
+                  <button class="feedback-vote feedback-vote-down" id="feedbackDownButton" type="button" aria-label="Unhelpful flag">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M7 14V4M14 14v4.5a2.5 2.5 0 0 1-2.5 2.5L7 14V4h9.2a2 2 0 0 1 1.96 1.62l1.2 6A2 2 0 0 1 17.4 14H14Z"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.8"
+                      />
+                      <path
+                        d="M4 4h3v10H4a1 1 0 0 0-1 1v0a1 1 0 0 0 1 1h3"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.8"
+                      />
+                    </svg>
+                    <span class="sr-only">Thumbs down</span>
+                  </button>
+                </div>
+                <div class="feedback-panel is-hidden" id="feedbackPanel">
+                  <label class="feedback-comment">
+                    <span>Optional note</span>
+                    <textarea
+                      id="feedbackComment"
+                      rows="3"
+                      placeholder="What should we keep, change, or clarify here?"
+                    ></textarea>
+                  </label>
+                  <div class="feedback-actions">
+                    <button class="button button-ghost feedback-save-note" id="feedbackSubmitButton" type="button">
+                      Save note
+                    </button>
+                    <button class="button button-ghost feedback-dismiss" id="feedbackDismissButton" type="button">
+                      Done
+                    </button>
+                  </div>
+                </div>
+                <p class="feedback-status is-hidden" id="feedbackStatus"></p>
+              </div>
+            </div>
+
+            <div class="detail-callout">
+              <div class="detail-callout-section">
+                <span class="detail-callout-label">What needs review</span>
+                <p class="editable-field" id="detailIssue" tabindex="0">No formal issue was recorded for this row.</p>
+              </div>
+              <div class="detail-callout-section">
+                <span class="detail-callout-label">Suggested next step</span>
+                <p class="editable-field" id="detailNextStep" tabindex="0">No suggested next step was recorded.</p>
+              </div>
+              <button class="button button-ghost button-sm detail-dismiss-button is-hidden" id="detailDismissButton" type="button">
+                Review not needed
+              </button>
+            </div>
+
+            <div class="detail-block">
+              <h3>Question behind the flag</h3>
+              <div class="token-list" id="detailChecklist"></div>
+            </div>
+
+            <div class="detail-block">
+              <h3>What in the row triggered this</h3>
+              <div class="evidence-grid" id="detailEvidence"></div>
+            </div>
+
+            <div class="detail-block">
+              <h3>Review together</h3>
+              <div class="review-group-list" id="detailReviewGroups"></div>
+            </div>
+
+            <details class="detail-collapsible">
+              <summary>More context needed</summary>
+              <div class="detail-collapsible-body">
+                <div class="token-list" id="detailMissingContext"></div>
+              </div>
+            </details>
+
+            <details class="detail-collapsible">
+              <summary>Full row details</summary>
+              <div class="detail-collapsible-body">
+                <div class="detail-table" id="detailTable"></div>
+              </div>
+            </details>
+          </div>
+        </aside>
+      </div>
+
+      <details class="viewer-collapsible viewer-patterns panel">
+        <summary class="viewer-collapsible-summary">
+          <div>
+            <p class="viewer-kicker">Pattern review</p>
+            <h2>Pattern flags</h2>
+            <p id="patternSummary">Jump into row clusters that were flagged together.</p>
+          </div>
+          <span class="viewer-collapsible-toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="viewer-collapsible-body">
+          <div class="viewer-pattern-grid" id="patternGrid"></div>
+        </div>
+      </details>
+    </div>
+
+    <script src="/viewer.js?v=20260316-31" defer></script>
+  </body>
+</html>
